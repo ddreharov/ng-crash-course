@@ -1,0 +1,9 @@
+1. Create a new angular project in your personal folder.
+2. Create header component with navigation.
+3. Create footer component with dummy data.
+4. Create dashboard module with one component
+5. Create profile module with one component
+6. Add routing to dashboard and profile modules
+7. Add navigation links to the modules
+8. Add active state to the button which navigates to specific module.
+9. Implement to way data binding in any component
