@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent
   },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard-routing.module').then(m => m.DashboardRoutingModule)
+  },
   { path: '**', component: NotFoundComponent }
 
 ];
