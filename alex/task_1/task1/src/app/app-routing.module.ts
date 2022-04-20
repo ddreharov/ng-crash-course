@@ -17,7 +17,6 @@ const routes: Routes = [
     loadChildren: () => import('./profile/profile-routing.module').then(m => m.ProfileRoutingModule)
   },
   { path: '**', component: NotFoundComponent }
-
 ];
 
 @NgModule({

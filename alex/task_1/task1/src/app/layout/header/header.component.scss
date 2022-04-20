@@ -1,8 +1,35 @@
+:host {
+    grid-area: header;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    background: #f6f6f6;
+}
+
+h1 {
+    margin: 0 0 10px;
+}
+
 nav {
     display: flex;
     gap: 5px;
-
+    justify-content: center;
+    
     a {
-        padding: 5px;
+        text-decoration: none;
+        padding: 10px;
+        background: #ededed;
+        border-radius: 5px;
+        color: #538dec;
+
+        &:hover,
+        &.active {
+            color: #F19800;
+        }
+        
+        &.active {
+            border: 1px solid #F19800;
+            font-weight: 700;
+        }
     }
 }
