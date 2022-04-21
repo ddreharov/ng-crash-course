@@ -5,15 +5,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home-routing.module').then(mod => mod.HomeRoutingModule)
+    loadChildren: () => import('./home/home.module').then(mod => mod.HomeModule)
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard-routing.module').then(mod => mod.DashboardRoutingModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then(mod => mod.DashboardModule)
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile-routing.module').then(mod => mod.ProfileRoutingModule)
+    loadChildren: () => import('./profile/profile.module').then(mod => mod.ProfileModule)
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
