@@ -10,11 +10,11 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./dashboard/dashboard-routing.module').then(m => m.DashboardRoutingModule)
+    loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile-routing.module').then(m => m.ProfileRoutingModule)
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
   },
   { path: '**', component: NotFoundComponent }
 ];
