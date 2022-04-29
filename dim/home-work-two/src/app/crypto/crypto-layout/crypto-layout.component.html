@@ -1,0 +1,27 @@
+
+  <div>
+    <input type="text" name="search" #searchInput>
+    <select name="column" #searchKeySelect>
+      <option *ngFor="let option of searchOptions"> {{option}} </option>
+    </select>
+    <button type="button" #searchClearBtn>CLEAR</button>
+  </div>
+  <ng-container *ngIf="loading">
+    <span>Loading...</span>
+  </ng-container>
+
+  <ng-container *ngIf="loadError">
+    <span>Something went wrong please try again later.</span>
+  </ng-container>
+
+  <app-currency-table
+    [hidden]="loading || loadError"
+    [items]="currencies$ | async"
+    [selectable]="true"
+    [selectedItems]="selectedItems$ | async"
+    (itemSelected)="onItemSelected($event)"
+    (sortBy)="onSortBy($event)"
+  >
+  </app-currency-table>
+
+
