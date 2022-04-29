@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngIf="selectable">#</th>
+      <th scope="col" *ngFor="let column of columns" (click)="onSortBy(column)">
+        {{column | titlecase}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items">
+      <td *ngIf="selectable">
+        <input
+          [checked]="selectedItems.has(item.exchangeId)"
+          type="checkbox"
+          (click)="onSelectItem($event, item)">
+      </td>
+      <td *ngFor="let column of columns">
+        <ng-container [ngSwitch]="column">
+          <ng-container *ngSwitchCase="'volumeUsd'">
+            {{item.volumeUsd | currency:'USD'}}
+          </ng-container>
+          <ng-container *ngSwitchCase="'updated'">
+            {{item.updated | date:'short'}}
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            {{item[column]}}
+          </ng-container>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+</table>

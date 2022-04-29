@@ -1,0 +1,10 @@
+<ng-container *ngIf="currencies$ | async as currencies">
+  <ng-template #emptyCurrencyListTpl>
+    <span>Please select currencies</span>
+    <button type="button" [routerLink]="['/crypto']">Go to crypto list</button>
+  </ng-template>
+  <ng-container *ngIf="currencies.length else emptyCurrencyListTpl">
+    <app-currency-table [items]="currencies"></app-currency-table>
+  </ng-container>
+</ng-container>
+
